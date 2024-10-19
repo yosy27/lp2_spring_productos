@@ -13,10 +13,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name="tb_categoria")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class CategoriaEntity {
 
 	@Id
@@ -27,4 +24,36 @@ public class CategoriaEntity {
 	@Column(name="nombre_categoria", nullable = false)
 	private String nombreCategoria;
 
+	public CategoriaEntity() {
+		super();
+	}
+
+	public CategoriaEntity(Integer categoriaId, String nombreCategoria) {
+		super();
+		this.categoriaId = categoriaId;
+		this.nombreCategoria = nombreCategoria;
+	}
+
+	public Integer getCategoriaId() {
+		return categoriaId;
+	}
+
+	public void setCategoriaId(Integer categoriaId) {
+		this.categoriaId = categoriaId;
+	}
+
+	public String getNombreCategoria() {
+		return nombreCategoria;
+	}
+
+	public void setNombreCategoria(String nombreCategoria) {
+		this.nombreCategoria = nombreCategoria;
+	}
+
+	@Override
+	public String toString() {
+		return "CategoriaEntity [categoriaId=" + categoriaId + ", nombreCategoria=" + nombreCategoria + "]";
+	}
+
+	
 }
