@@ -19,7 +19,10 @@ import lombok.Setter;
 
 @Entity
 @Table(name="tb_producto")
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProductoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,77 +45,6 @@ public class ProductoEntity {
 	@ManyToOne
 	@JoinColumn(name = "fk_categoria", nullable = false)
 	private CategoriaEntity categoriaEntity;
-
-	public Integer getProductoId() {
-		return productoId;
-	}
-
-	public void setProductoId(Integer productoId) {
-		this.productoId = productoId;
-	}
-
-	public String getNombreProducto() {
-		return nombreProducto;
-	}
-
-	public void setNombreProducto(String nombreProducto) {
-		this.nombreProducto = nombreProducto;
-	}
-
-	public Double getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(Double precio) {
-		this.precio = precio;
-	}
-
-	public Integer getCantidad() {
-		return cantidad;
-	}
-
-	public void setCantidad(Integer cantidad) {
-		this.cantidad = cantidad;
-	}
-
-	public LocalDate getFechaVencimiento() {
-		return fechaVencimiento;
-	}
-
-	public void setFechaVencimiento(LocalDate fechaVencimiento) {
-		this.fechaVencimiento = fechaVencimiento;
-	}
-
-	public CategoriaEntity getCategoriaEntity() {
-		return categoriaEntity;
-	}
-
-	public void setCategoriaEntity(CategoriaEntity categoriaEntity) {
-		this.categoriaEntity = categoriaEntity;
-	}
-
-	public ProductoEntity(Integer productoId, String nombreProducto, Double precio, Integer cantidad,
-			LocalDate fechaVencimiento, CategoriaEntity categoriaEntity) {
-		super();
-		this.productoId = productoId;
-		this.nombreProducto = nombreProducto;
-		this.precio = precio;
-		this.cantidad = cantidad;
-		this.fechaVencimiento = fechaVencimiento;
-		this.categoriaEntity = categoriaEntity;
-	}
-
-	public ProductoEntity() {
-		super();
-	}
-
-	@Override
-	public String toString() {
-		return "ProductoEntity [productoId=" + productoId + ", nombreProducto=" + nombreProducto + ", precio=" + precio
-				+ ", cantidad=" + cantidad + ", fechaVencimiento=" + fechaVencimiento + ", categoriaEntity="
-				+ categoriaEntity + "]";
-	}
-
 	
 	
 }

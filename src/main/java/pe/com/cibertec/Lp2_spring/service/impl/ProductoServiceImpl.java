@@ -11,11 +11,10 @@ import pe.com.cibertec.Lp2_spring.repository.ProductoRepository;
 import pe.com.cibertec.Lp2_spring.service.ProductoService;
 
 @Service
+@RequiredArgsConstructor
 public class ProductoServiceImpl implements ProductoService {
 
-	@Autowired
-	private ProductoRepository productoRepository;
-	
+private final ProductoRepository productoRepository;
 	
 	@Override
 	public List<ProductoEntity> listarProducto() {
@@ -26,17 +25,18 @@ public class ProductoServiceImpl implements ProductoService {
 	@Override
 	public void crearProducto(ProductoEntity productoEntity) {
 		// TODO Auto-generated method stub
-		
+		productoRepository.save(productoEntity);
 	}
 
+
 	@Override
-	public void actualizProducto(Integer id, ProductoEntity productoEntity) {
+	public void eliminarProducto(Integer id) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void eliminarProducto(Integer id) {
+	public void actualizarProducto(Integer id, ProductoEntity productoEntity) {
 		// TODO Auto-generated method stub
 		
 	}

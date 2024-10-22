@@ -9,7 +9,7 @@ import pe.com.cibertec.Lp2_spring.model.entity.ProductoEntity;
 public interface ProductoService {
 	List<ProductoEntity>listarProducto();
 	void crearProducto(ProductoEntity productoEntity);
-	void actualizProducto(Integer id, ProductoEntity productoEntity);
+	void actualizarProducto(Integer id, ProductoEntity productoEntity);
 	void eliminarProducto(Integer id);
 	//ver Detalle
 }
